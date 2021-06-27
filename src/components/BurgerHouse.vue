@@ -15,6 +15,7 @@
         <div class="line-third"></div>
       </div>
     </div>
+    <div class="sep"></div>
     <div class="menu">
       <div class="title">
         <span class="text">
@@ -24,18 +25,20 @@
         <div class="price">$9,290</div>
       </div>
       <bar-chart></bar-chart>
-      <div class="foot"></div>
+      <foot-bar-chart></foot-bar-chart>
     </div>
   </div>
 </template>
 
 <script>
 import BarChart from "./BarChart";
+import FootBarChart from "./FootBarChart";
 
 export default {
   name: "BurgerHouse",
   components: {
     BarChart,
+    FootBarChart,
   }
 }
 </script>
@@ -43,14 +46,12 @@ export default {
 <style lang="scss">
 .burger-house {
   position: absolute;
-  left: 300px;
-  top: 300px;
+  left: -87px;
+  top: 443px;
   width: 542px;
   height: 652px;
-  border: 1px solid red;
 
   .house-area {
-    border: 1px solid green;
     font-size: 38px;
     width: 425px;
     height: 208px;
@@ -66,7 +67,7 @@ export default {
 
     .text-area {
       position: absolute;
-      left: 70px;
+      left: 55px;
       top: 10px;
 
       .title {
@@ -81,7 +82,7 @@ export default {
 
     .price {
       position: absolute;
-      left: 80px;
+      left: 66px;
       top: 125px;
     }
 
@@ -94,29 +95,37 @@ export default {
       .line-first {
         width: 135px;
         height: 12px;
-        background: #59CEE6;
+        background: rgba(89, 206, 230, 52%);
         border: 3px solid #0B829B;
         border-radius: 50px;
-        margin-right: 10px;
+        margin-right: 15px;
       }
 
       .line-second {
         width: 87px;
         height: 12px;
-        background: #F3A93B;
+        background: rgba(243, 169, 59, 40%);
         border: 3px solid #EA930E;
         border-radius: 50px;
-        margin-right: 10px;
+        margin-right: 15px;
       }
 
       .line-third {
         width: 114px;
         height: 12px;
-        background: #F0F1F2;
+        background: rgba(240, 241, 242, 40%);
         border: 3px solid #E2E4E7;
         border-radius: 50px;
       }
     }
+  }
+  .sep {
+    height: 2px;
+    width: 469px;
+    background: #F1F3F5;
+    position: absolute;
+    left: 71px;
+    top: 262px;
   }
   .menu {
     width: 469px;
@@ -124,7 +133,6 @@ export default {
     position: absolute;
     right: 0;
     bottom: 0;
-    border: 1px solid red;
 
     .title {
       font-size: 28px;
@@ -149,9 +157,6 @@ export default {
         right: 20px;
         top: 10px;
       }
-    }
-    .foot {
-
     }
   }
 }

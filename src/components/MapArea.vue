@@ -118,7 +118,7 @@ export default {
           position: absolute;
           left: 13px;
           top: 13px;
-          background: #F5F7F9;
+          background: rgba(245, 247, 249, 87%);
 
           .inner {
             width: 229px;

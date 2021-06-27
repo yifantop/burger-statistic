@@ -23,7 +23,6 @@
         </li>
       </ul>
     </div>
-    <div class="foot"></div>
   </div>
 </template>
 
@@ -61,6 +60,8 @@ export default {
     height: 194px;
     border: 2px solid #EDEEF0;
     border-radius: 20px;
+    background: #FFFFFF;
+    z-index: 6;
 
     .bar-chart-title {
       position: relative;
@@ -100,7 +101,8 @@ export default {
       .dividing-line {
         width: 428px;
         height: 1px;
-        background: #DADEE4;
+        background: rgba(218, 222, 228, 100%);
+        border-radius: 20px;
         position: relative;
         top: 40px;
       }
@@ -115,12 +117,12 @@ export default {
 
         .single-bar {
           .active {
-            background: #59CEE6;
-            border: 1px solid #0B829B;
+            background: rgba(89, 206, 230, 52%);
+            border: 1.6px solid #0B829B;
           }
           .notActive {
-            background: #F0F1F2;
-            border: 1px solid #E2E4E7;
+            background: rgba(240, 241, 242, 40%);
+            border: 1.6px solid #E2E4E7;
           }
           .single-bar-img {
             width: 15px;
