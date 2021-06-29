@@ -23,147 +23,173 @@
       </div>
       <span>Barcelona</span>
     </div>
-    <burger-house></burger-house>
-
+    <burger-house-left
+        :houseCity="houseCity"
+        :cityPrice="cityPrice"
+        :burgerMenuPrice="burgerMenuPrice">
+    </burger-house-left>
+    <burger-house-right
+        :houseCity="houseCity2"
+        :cityPrice="cityPrice2"
+        :burgerMenuPrice="burgerMenuPrice2">
+    </burger-house-right>
+    <spider-chart></spider-chart>
   </div>
 </template>
 
 <script>
-import BurgerHouse from "./BurgerHouse";
+import BurgerHouseLeft from "./BurgerHouseLeft";
+import BurgerHouseRight from "./BurgerHouseRight";
+import SpiderChart from "./SpiderChart";
+
 
 export default {
   name: "MapArea",
   components: {
-    BurgerHouse,
+    BurgerHouseLeft,
+    BurgerHouseRight,
+    SpiderChart
+  },
+  data() {
+    return {
+      houseCity: 'California',
+      cityPrice: 234730,
+      burgerMenuPrice: 9290,
+
+      houseCity2: 'Barcelona',
+      cityPrice2: 344560,
+      burgerMenuPrice2: 13980
+    }
   }
 }
 </script>
 
 <style lang="scss">
-  .map-area {
+.map-area {
+  width: 1588px;
+  position: absolute;
+  left: 128px;
+  top: 146px;
+
+
+  .map-img {
     width: 1588px;
+  }
+
+  .label-1 {
+    width: 74.4px;
+    height: 100px;
     position: absolute;
-    left: 128px;
-    top: 146px;
+    left: 157px;
+    top: 260px;
 
 
-    .map-img {
-      width: 1588px;
+    .focus-point {
+      width: 70.4px;
+      height: 70.4px;
+      background: #FEFEFE;
+      border: 3px solid rgb(218, 222, 228);
+      border-radius: 50%;
+      position: relative;
+
+      .center-point {
+        width: 33.66px;
+        height: 33.66px;
+        border: 4px solid #0B829B;
+        background: #59CEE6;
+        border-radius: 50%;
+        position: relative;
+        left: 25%;
+        top: 24%;
+      }
     }
 
-    .label-1 {
-      width: 74.4px;
+    span {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-size: 18px;
+      opacity: 70%;
+    }
+  }
+
+  .label-2 {
+    width: 513px;
+    height: 134px;
+    position: absolute;
+    left: 560px;
+    top: 187px;
+
+    span {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      font-size: 18px;
+      opacity: 70%;
+    }
+
+    .focus-point {
+      width: 100px;
       height: 100px;
-      position: absolute;
-      left: 157px;
-      top: 260px;
+      background: #FEFEFE;
+      border: 3px solid rgb(218, 222, 228);
+      border-radius: 50%;
+      position: relative;
 
-
-      .focus-point {
-        width: 70.4px;
-        height: 70.4px;
-        background: #FEFEFE;
-        border: 3px solid rgb(218,222,228);
-        border-radius: 50%;
-        position: relative;
-
-        .center-point {
-          width: 33.66px;
-          height: 33.66px;
-          border: 4px solid #0B829B;
-          background: #59CEE6;
-          border-radius: 50%;
-          position: relative;
-          left: 25%;
-          top: 24%;
-        }
-      }
-      span {
+      .view-insight {
+        width: 496px;
+        height: 68px;
+        border: 3px solid rgb(218, 222, 228);
+        border-radius: 50px;
         position: absolute;
-        bottom: 0;
-        left: 0;
-        font-size: 18px;
-        opacity: 70%;
-      }
-    }
+        left: 13px;
+        top: 13px;
+        background: rgba(245, 247, 249, 87%);
 
-    .label-2 {
-      width: 513px;
-      height: 134px;
-      position: absolute;
-      left: 560px;
-      top: 187px;
-
-      span {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        font-size: 18px;
-        opacity: 70%;
-      }
-
-      .focus-point {
-        width: 100px;
-        height: 100px;
-        background: #FEFEFE;
-        border: 3px solid rgb(218,222,228);
-        border-radius: 50%;
-        position: relative;
-
-        .view-insight {
-          width: 496px;
+        .inner {
+          width: 229px;
           height: 68px;
-          border: 3px solid rgb(218,222,228);
+          border: 3px solid rgb(218, 222, 228);
           border-radius: 50px;
+          background: #FEFEFE;
           position: absolute;
-          left: 13px;
-          top: 13px;
-          background: rgba(245, 247, 249, 87%);
+          left: -3px;
+          top: -3px;
 
-          .inner {
-            width: 229px;
-            height: 68px;
-            border: 3px solid rgb(218,222,228);
-            border-radius: 50px;
-            background: #FEFEFE;
-            position: absolute;
-            left: -3px;
-            top: -3px;
-
-            .center-point {
-              width: 34px;
-              height: 34px;
-              border: 4px solid #0B829B;
-              background: #59CEE6;
-              border-radius: 50%;
-              position: relative;
-              left: 13px;
-              top: 13px;
-            }
-
-            .text2 {
-              position: absolute;
-              left: 64px;
-              top: 16px;
-              font-size: 25px;
-              opacity: 70%;
-            }
+          .center-point {
+            width: 34px;
+            height: 34px;
+            border: 4px solid #0B829B;
+            background: #59CEE6;
+            border-radius: 50%;
+            position: relative;
+            left: 13px;
+            top: 13px;
           }
 
-          .text1 {
-            font-size: 25px;
+          .text2 {
             position: absolute;
-            right: 35px;
+            left: 64px;
             top: 16px;
+            font-size: 25px;
             opacity: 70%;
+          }
+        }
 
-            img {
-              margin-left: 50px;
-              margin-bottom: 2px;
-            }
+        .text1 {
+          font-size: 25px;
+          position: absolute;
+          right: 35px;
+          top: 16px;
+          opacity: 70%;
+
+          img {
+            margin-left: 50px;
+            margin-bottom: 2px;
           }
         }
       }
     }
   }
+}
 </style>

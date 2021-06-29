@@ -3,8 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #myCanvas {
+            border: 1px solid black;
+            margin-left: 500px;
+        }
+    </style>
 </head>
+
 <body>
-<div class="app"></div>
+<canvas id="myCanvas" width="500px" height="500px"></canvas>
+<script>
+  let canvas = document.getElementById('myCanvas');
+  let ctx = canvas.getContext('2d');
+  // row 1
+  ctx.beginPath();
+  ctx.arc(50, 50, 40, 0, Math.PI, false);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.arc(150, 50, 40, 0, Math.PI * 1.5, false);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.arc(250, 50, 40, 0, Math.PI * 2, true);
+  ctx.stroke();
+
+  // row 2
+  ctx.beginPath();
+  ctx.arc(50, 150, 40, 0, Math.PI, true);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.arc(150, 150, 40, 0, Math.PI * 1.5, true);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.arc(250, 150, 40, 0, Math.PI * 2, true);
+  ctx.stroke();
+
+  // row 3
+  ctx.beginPath();
+  ctx.arc(50, 250, 40, 0, Math.PI, false);
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(150, 250, 40, 0, Math.PI * 1.5, false);
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(250, 250, 40, 0, Math.PI * 2, true);
+  ctx.fill();
+
+  // row 4
+  ctx.beginPath();
+  ctx.arc(50, 350, 40, 0, Math.PI, true);
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(150, 350, 40, 0, Math.PI * 1.5, true);
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(250, 350, 40, 0, Math.PI * 2, true);
+  ctx.fill();
+
+  // row 5
+  ctx.beginPath();
+  ctx.arc(50, 450, 40, Math.PI * (-1), Math.PI * (-0.5), false);
+  ctx.fill();
+</script>
 </body>
 </html>

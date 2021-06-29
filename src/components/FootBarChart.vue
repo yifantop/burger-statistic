@@ -1,11 +1,9 @@
 <template>
   <div class="foot-bar-chart">
-    <div class="func-box">
-      X-Ray
-    </div>
-    <div class="sep"></div>
+    <div class="func-box">X-Ray</div>
+    <div class="sep-func-box"></div>
     <div class="func-box">Export</div>
-    <div class="sep"></div>
+    <div class="sep-func-box"></div>
     <div class="func-box">Save</div>
   </div>
 </template>
@@ -40,9 +38,9 @@ export default {
     .func-box:first-child {
       opacity: 70%;
     }
-    .sep {
-      width: 1px;
-      height: 100%;
+    .sep-func-box {
+      width: 2px;
+      height: 194px;
       background: #F1F3F5;
     }
   }

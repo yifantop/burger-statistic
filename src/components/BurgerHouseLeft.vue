@@ -1,13 +1,15 @@
 <template>
-  <div class="burger-house">
+  <div class="burger-house-left">
     <div class="house-area">
       <img src="../assets/img/arrow.png" alt="">
       <div class="text-area">
         <div class="title">Burger House</div>
-        <div class="city">California</div>
+        <div class="city">
+          {{ houseCity }}
+        </div>
       </div>
       <div class="price">
-        $234,730
+        {{ cityPriceAmount }}
       </div>
       <div class="horizontal-dividing">
         <div class="line-first"></div>
@@ -22,9 +24,11 @@
           Burger Menu
           <img src="../assets/img/arrow.png" alt="">
         </span>
-        <div class="price">$9,290</div>
+        <div class="price">
+          {{ burgerMenuPriceAmount }}
+        </div>
       </div>
-      <bar-chart></bar-chart>
+      <bar-chart :burgers="burgersLeft"></bar-chart>
       <foot-bar-chart></foot-bar-chart>
     </div>
   </div>
@@ -33,18 +37,45 @@
 <script>
 import BarChart from "./BarChart";
 import FootBarChart from "./FootBarChart";
+import moneyFormSwitch from "../tools/moneyFormSwitch";
+import {mapState} from 'vuex';
 
 export default {
-  name: "BurgerHouse",
+  name: "BurgerHouseLeft",
   components: {
     BarChart,
     FootBarChart,
+  },
+  props: {
+    houseCity: {
+      type: String,
+      required: true
+    },
+    cityPrice: {
+      type: Number,
+      required: true
+    },
+    burgerMenuPrice: {
+      type: Number,
+      required: true
+    }
+  },
+  computed: {
+    cityPriceAmount() {
+      return moneyFormSwitch(this.cityPrice);
+    },
+    burgerMenuPriceAmount() {
+      return moneyFormSwitch(this.burgerMenuPrice);
+    },
+    ...mapState({
+      burgersLeft: state => state.burgerMenuData.burgersLeft,
+    })
   }
 }
 </script>
 
 <style lang="scss">
-.burger-house {
+.burger-house-left {
   position: absolute;
   left: -87px;
   top: 443px;
@@ -119,6 +150,7 @@ export default {
       }
     }
   }
+
   .sep {
     height: 2px;
     width: 469px;
@@ -127,6 +159,7 @@ export default {
     left: 71px;
     top: 262px;
   }
+
   .menu {
     width: 469px;
     height: 336px;
@@ -152,6 +185,7 @@ export default {
           top: 14px;
         }
       }
+
       .price {
         position: absolute;
         right: 20px;
