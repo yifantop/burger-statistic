@@ -1,5 +1,8 @@
 # bridge-calculation
 
+## Effect image
+![avatar](./src/assets/img/effect-image.png)
+
 ## Project setup
 ```
 npm install
