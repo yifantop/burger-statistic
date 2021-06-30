@@ -1,4 +1,4 @@
-# bridge-calculation
+# burger-statistic
 
 ## Effect image  
 ![avatar](./src/assets/img/effect-image.png)
