@@ -4,6 +4,8 @@
       Spider Chart
     </div>
     <canvas-chart></canvas-chart>
+    <div class="line-left"></div>
+    <div class="line-right"></div>
   </div>
 </template>
 
@@ -33,6 +35,22 @@ export default {
   left: 528px;
   top: 598px;
 
+  .line-left {
+    width: 100px;
+    height: 2px;
+    position: absolute;
+    top: 314px;
+    right: -100px;
+    background: rgba(218, 222, 228, 38%);
+  }
+  .line-right {
+    width: 100px;
+    height: 2px;
+    position: absolute;
+    top: 314px;
+    left: -100px;
+    background: rgba(218, 222, 228, 38%);
+  }
 
   .spider-chart-title {
     font-size: 31px;
